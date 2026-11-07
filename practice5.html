@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice</title>
+</head>
+<body>
+    <div id="container">
+        <p id="p1">Apple</p>
+        <p>Banana</p>
+        <p>Mango</p>
+    </div>
+    <script>
+    let parent = document.getElementById("container");
+    let child = document.getElementById("p1");
+    console.log(child.parentElement);
+    console.log(parent.children);
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+    console.log(parent.children.length);
+    for (let item of parent.children) {
+        console.log(item.textContent);
+    }
+    let newChild = document.createElement("h2");
+    newChild.textContent = "Orange";
+    parent.appendChild(newChild);
+    parent.firstElementChild.textContent = "Green Apple";
+    </script>
+</body>
+</html>
