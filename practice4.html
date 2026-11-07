@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events Practice</title>
+</head>
+<body>
+    <button id="myButton">Click Here</button>
+    <input type="text" id="myInput" placeholder="Enter your name">
+    <h2 id="message"></h2>
+    <h3 id="inputMessage"></h3>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const button = document.getElementById('myButton');
+        const input = document.getElementById('myInput');
+        const message = document.getElementById('message');
+        const inputMessage = document.getElementById('inputMessage');
+        button.addEventListener('click', () => {
+            message.textContent = 'You clicked the button!';
+        });
+        button.addEventListener('dblclick', () => {
+            message.textContent = 'You double clicked the button!';
+        });
+        input.addEventListener('input', (event) => {
+            inputMessage.textContent = 'Hello ' + event.target.value;
+        });
+        button.addEventListener('mouseover', () => {
+            button.style.backgroundColor = 'pink';
+        });
+        button.addEventListener('mouseout', () => {
+            button.style.backgroundColor = '';
+        });
+    });
+    </script>
+</body>
+</html>
